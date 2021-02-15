@@ -1,0 +1,21 @@
+sequence = input('enter the sequence ')
+sequence = sequence + '$'
+transformed_sequences = []
+
+for i in range(len(sequence)):
+    new_seq = sequence[-1] + sequence[:-1]
+    new_seq = ''.join(new_seq)
+    sequence = new_seq
+    transformed_sequences.append(new_seq)
+
+print(transformed_sequences)
+
+transformed_sequences = sorted(transformed_sequences)
+print(transformed_sequences)
+
+transformed = ''
+for i in range(len(sequence)):
+    new_el = transformed_sequences[i][-1]
+    transformed += new_el
+
+print(transformed)
