@@ -1,0 +1,21 @@
+seq = input('enter the sequence ')
+seq = seq.upper()
+seq += '$'
+
+shift_array = []
+for i in range(len(seq)):
+    a = seq[-1] + seq[:-1]
+    seq = ''.join(a)
+    shift_array.append(seq)
+
+shift_array = sorted(shift_array)
+print(shift_array)
+
+suffix_array = []
+for i in range(len(seq)):
+    k = 0
+    while shift_array[i][k] != '$':
+        k += 1
+    suffix_array.append(len(seq)-k)
+
+print(suffix_array)
